@@ -1,0 +1,1 @@
+export const sidebarData = {"dev/":["spinner","themes","notifications","lifecycle","terminal","tables","helpers","02_commands","01_application",{"text":"Api","prefix":"api/","collapsible":true,"children":[{"text":"Facades","prefix":"facades/","collapsible":true,"children":["question","ui"]}]}]};

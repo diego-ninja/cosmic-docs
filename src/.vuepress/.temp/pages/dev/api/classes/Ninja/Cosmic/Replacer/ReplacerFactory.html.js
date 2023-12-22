@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-5cbe8536\",\"path\":\"/dev/api/classes/Ninja/Cosmic/Replacer/ReplacerFactory.html\",\"title\":\"ReplacerFactory\",\"lang\":\"en-US\",\"frontmatter\":{\"description\":\"Full name: \\\\Ninja\\\\Cosmic\\\\Replacer\\\\ReplacerFactory; This class is marked as final and can't be subclassed; This class is a Final class; Properties replacers This property is stat...\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://vuepress-theme-hope-docs-demo.netlify.app/dev/api/classes/Ninja/Cosmic/Replacer/ReplacerFactory.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Docs Demo\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"ReplacerFactory\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"Full name: \\\\Ninja\\\\Cosmic\\\\Replacer\\\\ReplacerFactory; This class is marked as final and can't be subclassed; This class is a Final class; Properties replacers This property is stat...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"en-US\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mr.Hope\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"ReplacerFactory\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mr.Hope\\\",\\\"url\\\":\\\"https://mister-hope.com\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"Properties\",\"slug\":\"properties\",\"link\":\"#properties\",\"children\":[{\"level\":3,\"title\":\"replacers\",\"slug\":\"replacers\",\"link\":\"#replacers\",\"children\":[]}]},{\"level\":2,\"title\":\"Methods\",\"slug\":\"methods\",\"link\":\"#methods\",\"children\":[{\"level\":3,\"title\":\"getInstance\",\"slug\":\"getinstance\",\"link\":\"#getinstance\",\"children\":[]},{\"level\":3,\"title\":\"registerReplacer\",\"slug\":\"registerreplacer\",\"link\":\"#registerreplacer\",\"children\":[]},{\"level\":3,\"title\":\"getReplacers\",\"slug\":\"getreplacers\",\"link\":\"#getreplacers\",\"children\":[]},{\"level\":3,\"title\":\"replace\",\"slug\":\"replace\",\"link\":\"#replace\",\"children\":[]},{\"level\":3,\"title\":\"r\",\"slug\":\"r\",\"link\":\"#r\",\"children\":[]},{\"level\":3,\"title\":\"__construct\",\"slug\":\"construct\",\"link\":\"#construct\",\"children\":[]}]}],\"readingTime\":{\"minutes\":0.4,\"words\":121},\"filePathRelative\":\"dev/api/classes/Ninja/Cosmic/Replacer/ReplacerFactory.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

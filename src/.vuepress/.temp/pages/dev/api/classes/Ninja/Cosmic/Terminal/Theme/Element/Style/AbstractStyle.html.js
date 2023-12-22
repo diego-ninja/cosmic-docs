@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-3783638a\",\"path\":\"/dev/api/classes/Ninja/Cosmic/Terminal/Theme/Element/Style/AbstractStyle.html\",\"title\":\"AbstractStyle\",\"lang\":\"en-US\",\"frontmatter\":{\"description\":\"Full name: \\\\Ninja\\\\Cosmic\\\\Terminal\\\\Theme\\\\Element\\\\Style\\\\AbstractStyle; Parent class: \\\\Ninja\\\\Cosmic\\\\Terminal\\\\Theme\\\\Element\\\\AbstractThemeElement (../AbstractThemeElement.md); This c...\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://vuepress-theme-hope-docs-demo.netlify.app/dev/api/classes/Ninja/Cosmic/Terminal/Theme/Element/Style/AbstractStyle.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Docs Demo\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"AbstractStyle\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"Full name: \\\\Ninja\\\\Cosmic\\\\Terminal\\\\Theme\\\\Element\\\\Style\\\\AbstractStyle; Parent class: \\\\Ninja\\\\Cosmic\\\\Terminal\\\\Theme\\\\Element\\\\AbstractThemeElement (../AbstractThemeElement.md); This c...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"en-US\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mr.Hope\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"AbstractStyle\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mr.Hope\\\",\\\"url\\\":\\\"https://mister-hope.com\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"Constants\",\"slug\":\"constants\",\"link\":\"#constants\",\"children\":[]},{\"level\":2,\"title\":\"Methods\",\"slug\":\"methods\",\"link\":\"#methods\",\"children\":[{\"level\":3,\"title\":\"fromArray\",\"slug\":\"fromarray\",\"link\":\"#fromarray\",\"children\":[]},{\"level\":3,\"title\":\"load\",\"slug\":\"load\",\"link\":\"#load\",\"children\":[]}]},{\"level\":2,\"title\":\"Inherited methods\",\"slug\":\"inherited-methods\",\"link\":\"#inherited-methods\",\"children\":[{\"level\":3,\"title\":\"toJson\",\"slug\":\"tojson\",\"link\":\"#tojson\",\"children\":[]},{\"level\":3,\"title\":\"toArray\",\"slug\":\"toarray\",\"link\":\"#toarray\",\"children\":[]},{\"level\":3,\"title\":\"jsonSerialize\",\"slug\":\"jsonserialize\",\"link\":\"#jsonserialize\",\"children\":[]}]}],\"readingTime\":{\"minutes\":0.39,\"words\":117},\"filePathRelative\":\"dev/api/classes/Ninja/Cosmic/Terminal/Theme/Element/Style/AbstractStyle.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

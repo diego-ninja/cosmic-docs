@@ -1,0 +1,48 @@
+<template><div><h1 id="💬-notifications" tabindex="-1"><a class="header-anchor" href="#💬-notifications" aria-hidden="true">#</a> 💬 Notifications</h1>
+<p>The <code v-pre>Notifier</code> class is a singleton class that provides methods to display OS-based notifications. It uses the <code v-pre>Joli\JoliNotif\Notifier</code> class to send the notifications. The notifications can be of success or error type.</p>
+<h2 id="usage" tabindex="-1"><a class="header-anchor" href="#usage" aria-hidden="true">#</a> Usage</h2>
+<h3 id="getting-the-instance" tabindex="-1"><a class="header-anchor" href="#getting-the-instance" aria-hidden="true">#</a> Getting the Instance</h3>
+<p>The <code v-pre>Notifier</code> class is a singleton, so you get an instance of it by calling the <code v-pre>getInstance</code> method:</p>
+<div class="language-php line-numbers-mode" data-ext="php"><pre v-pre class="language-php"><code><span class="token variable">$notifier</span> <span class="token operator">=</span> <span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>Ninja<span class="token punctuation">\</span>Cosmic<span class="token punctuation">\</span>Notifier<span class="token punctuation">\</span>Notifier</span><span class="token operator">::</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="sending-notifications" tabindex="-1"><a class="header-anchor" href="#sending-notifications" aria-hidden="true">#</a> Sending Notifications</h3>
+<p>The <code v-pre>Notifier</code> class provides three static methods to send notifications: <code v-pre>success</code>, <code v-pre>error</code>, and <code v-pre>notify</code>.</p>
+<h4 id="success-notification" tabindex="-1"><a class="header-anchor" href="#success-notification" aria-hidden="true">#</a> Success Notification</h4>
+<p>To send a success notification, use the <code v-pre>success</code> method. This method accepts a string message as a parameter:</p>
+<div class="language-php line-numbers-mode" data-ext="php"><pre v-pre class="language-php"><code><span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>Ninja<span class="token punctuation">\</span>Cosmic<span class="token punctuation">\</span>Notifier<span class="token punctuation">\</span>Notifier</span><span class="token operator">::</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'Your operation was successful.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h4 id="error-notification" tabindex="-1"><a class="header-anchor" href="#error-notification" aria-hidden="true">#</a> Error Notification</h4>
+<p>To send an error notification, use the <code v-pre>error</code> method. This method also accepts a string message as a parameter:</p>
+<div class="language-php line-numbers-mode" data-ext="php"><pre v-pre class="language-php"><code><span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>Ninja<span class="token punctuation">\</span>Cosmic<span class="token punctuation">\</span>Notifier<span class="token punctuation">\</span>Notifier</span><span class="token operator">::</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'An error occurred during the operation.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h4 id="general-notification" tabindex="-1"><a class="header-anchor" href="#general-notification" aria-hidden="true">#</a> General Notification</h4>
+<p>To send a general notification, use the <code v-pre>notify</code> method. This method also accepts a string message as a parameter:</p>
+<div class="language-php line-numbers-mode" data-ext="php"><pre v-pre class="language-php"><code><span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>Ninja<span class="token punctuation">\</span>Cosmic<span class="token punctuation">\</span>Notifier<span class="token punctuation">\</span>Notifier</span><span class="token operator">::</span><span class="token function">notify</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'A general notification message.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="implementing-the-notifiableinterface" tabindex="-1"><a class="header-anchor" href="#implementing-the-notifiableinterface" aria-hidden="true">#</a> Implementing the NotifiableInterface</h2>
+<p>Commands that should display notifications upon exit (either successful or failure) should implement the <code v-pre>NotifiableInterface</code>. This interface requires two methods to be implemented: <code v-pre>getSuccessMessage</code> and <code v-pre>getErrorMessage</code>.</p>
+<p>You don't need to take care of sending the notifications using the Notifier class as the CosmicCommand does it for you under the hood, the success() and failure() methods of the CosmicCommand class detects if the command is notifiable and sends the proper notification upon command exit.</p>
+<p>Here is an example of a command implementing the <code v-pre>NotifiableInterface</code>:</p>
+<div class="language-php line-numbers-mode" data-ext="php"><pre v-pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">declare</span><span class="token punctuation">(</span>strict_types<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token package">Ninja<span class="token punctuation">\</span>Cosmic<span class="token punctuation">\</span>Command</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Ninja<span class="token punctuation">\</span>Cosmic<span class="token punctuation">\</span>Notifier<span class="token punctuation">\</span>NotifiableInterface</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">ExampleCommand</span> extend CosmicCommand <span class="token keyword">implements</span> <span class="token class-name">NotifiableInterface</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">_invoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">void</span>
+    <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">getSuccessMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">string</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string single-quoted-string">'The command executed successfully.'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">getErrorMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">string</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string single-quoted-string">'An error occurred while executing the command.'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+
+
